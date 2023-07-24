@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect('mongodb://127.0.0.1:27017/blog',{useNewURLParser: true});
+mongoose.connect("mongodb+srv://krish:kaviya@myblog.qqc7nru.mongodb.net/Blog",{useNewURLParser: true});
 
 const postSchema = {
 
@@ -81,6 +81,6 @@ app.get("/posts/:postId", function(req, res){
   
 });
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("Server started on port 3000");
 });
